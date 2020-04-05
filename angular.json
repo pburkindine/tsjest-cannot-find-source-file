@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "projects": {
+    "tsjest-cannot-find-source-file": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/tsjest-cannot-find-source-file",
+      "sourceRoot": "apps/tsjest-cannot-find-source-file/src",
+      "prefix": "tsjest-cannot-find-source-file",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/tsjest-cannot-find-source-file",
+            "index": "apps/tsjest-cannot-find-source-file/src/index.html",
+            "main": "apps/tsjest-cannot-find-source-file/src/main.ts",
+            "polyfills": "apps/tsjest-cannot-find-source-file/src/polyfills.ts",
+            "tsConfig": "apps/tsjest-cannot-find-source-file/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/tsjest-cannot-find-source-file/src/favicon.ico",
+              "apps/tsjest-cannot-find-source-file/src/assets"
+            ],
+            "styles": ["apps/tsjest-cannot-find-source-file/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/tsjest-cannot-find-source-file/src/environments/environment.ts",
+                  "with": "apps/tsjest-cannot-find-source-file/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "tsjest-cannot-find-source-file:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "tsjest-cannot-find-source-file:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "tsjest-cannot-find-source-file:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/tsjest-cannot-find-source-file/tsconfig.app.json",
+              "apps/tsjest-cannot-find-source-file/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/tsjest-cannot-find-source-file/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/tsjest-cannot-find-source-file/jest.config.js",
+            "tsConfig": "apps/tsjest-cannot-find-source-file/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/tsjest-cannot-find-source-file/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "tsjest-cannot-find-source-file-e2e": {
+      "root": "apps/tsjest-cannot-find-source-file-e2e",
+      "sourceRoot": "apps/tsjest-cannot-find-source-file-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/tsjest-cannot-find-source-file-e2e/cypress.json",
+            "tsConfig": "apps/tsjest-cannot-find-source-file-e2e/tsconfig.e2e.json",
+            "devServerTarget": "tsjest-cannot-find-source-file:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tsjest-cannot-find-source-file:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/tsjest-cannot-find-source-file-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/tsjest-cannot-find-source-file-e2e/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "tsjest-cannot-find-source-file"
+}

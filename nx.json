@@ -1,0 +1,22 @@
+{
+  "npmScope": "tsjest-cannot-find-source-file",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "tsjest-cannot-find-source-file": {
+      "tags": []
+    },
+    "tsjest-cannot-find-source-file-e2e": {
+      "tags": [],
+      "implicitDependencies": ["tsjest-cannot-find-source-file"]
+    }
+  }
+}
