@@ -59,8 +59,8 @@
     "codelyzer": "~5.0.1",
     "jest-preset-angular": "8.0.0",
     "@nrwl/jest": "9.0.1",
-    "jest": "24.1.0",
-    "@types/jest": "24.0.9",
+    "jest": "25.2.7",
+    "@types/jest": "25.2.1",
     "ts-jest": "25.3.1",
     "cypress": "^3.8.2",
     "@nrwl/cypress": "9.0.1"

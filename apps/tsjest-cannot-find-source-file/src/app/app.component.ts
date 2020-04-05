@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tsjest-cannot-find-source-file';
 
-  foo = 'bar';
+  baz = 'quu';
 }
